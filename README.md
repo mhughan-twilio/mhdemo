@@ -56,6 +56,7 @@ start_call.js
 escalation request example:
 https://console.twilio.com/us1/develop/voice-intelligence/transcripts/GA5e0568682d6ef96d11a4fed880fda20f/transcript-viewer/GT9122cd4e54a2fbd435bbfb076e70cbf7?sensitive=false
 
+TO DO:
 
 - fix participant labels
 - use unified profiles
@@ -67,6 +68,3 @@ https://console.twilio.com/us1/develop/voice-intelligence/transcripts/GA5e056868
 - One AI is a customer
 A/B test AI agents
 simulated customers against a AI sales bot
-
-- share with Aimen
-
