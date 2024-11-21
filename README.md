@@ -1,3 +1,5 @@
+Call flow
+
 start_call.js
 - select a random number (of 10 options) to use as a from number
 - place outbound call to the support line (+14123019770) from the selected number
