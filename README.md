@@ -1,4 +1,4 @@
-Call flow
+Call flow for the demo
 
 start_call.js
 - select a random number (of 10 options) to use as a from number
