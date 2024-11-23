@@ -4,7 +4,7 @@ exports.handler = function(context, event, callback) {
     const twiml = new Twilio.twiml.VoiceResponse();
 
     const agents = {
-        '1': { name: 'Alice', personality: 'kind and helpful', gender: 'woman' },
+        '1': { name: 'Alice', personality: 'impolite and unprofessional', gender: 'woman' },
         '2': { name: 'Bob', personality: 'impatient and unsympathetic', gender: 'man' },
         '3': { name: 'Charlie', personality: 'arrogant and condescending', gender: 'man' },
         '4': { name: 'David', personality: 'cold and indifferent', gender: 'man' },
