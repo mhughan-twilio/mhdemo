@@ -16,8 +16,8 @@ exports.handler = function(context, event, callback) {
         '10': { name: 'Jack', personality: 'unfriendly and introverted', gender: 'man' }
     };
 
-    //const randomIndex = Math.floor(Math.random() * agents.length);
-    const randomIndex = '1';
+    //const randomIndex = '1';
+    const randomIndex = Math.floor(Math.random() * agents.length);
     const agent = agents[randomIndex];
     console.log(`Selected Agent: ${agent.name}`);
 
