@@ -33,17 +33,6 @@ exports.handler = async function(context, event, callback) {
 
       // Create a TwiML Voice Response object to build the response
       const twiml = new Twilio.twiml.VoiceResponse();
-/*
-   
-      // If no previous conversation is present, or if the conversation is empty, start the conversation
-    if (!event.request.cookies.convo) {
-        // Greet the user with a message using AWS Polly Neural voice
-        twiml.say({
-                voice: 'Polly.Joanna-Neural',
-            },
-	    "Hey! You've reached customer service. What can I help you with today?"
-        );
-    }*/
 
   // Initiate the Twilio Response object to handle updating the cookie with the chat history
   const response = new Twilio.Response();

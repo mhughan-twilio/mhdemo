@@ -2,16 +2,6 @@ exports.handler = function(context, event, callback) {
     // Create a TwiML Voice Response object to build the response
     const twiml = new Twilio.twiml.VoiceResponse();
 
-    // If no previous conversation is present, or if the conversation is empty, start the conversation
-    /*if (!event.request.cookies.convo) {
-        // Greet the user with a message using AWS Polly Neural voice
-        twiml.say({
-                voice: 'Polly.Joanna-Neural',
-            },
-	    "Hey! I'm Joanna, a chatbot created using Twilio and ChatGPT. What would you like to talk about today?"
-        );
-    }*/
-
     // Listen to the user's speech and pass the input to the /respond Function
     twiml.gather({
         speechTimeout: 'auto', // Automatically determine the end of user speech

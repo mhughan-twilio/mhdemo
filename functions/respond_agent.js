@@ -9,29 +9,6 @@ exports.handler = async function(context, event, callback) {
     //const agentname = event.Agent;
     const agent = JSON.parse(decodeURIComponent(event.Agent));
 
-/*
-    const agents = {
-        '1': { name: 'Alice', personality: 'mean and unhelpful', gender: 'woman' },
-        '2': { name: 'Bob', personality: 'impatient and unsympathetic', gender: 'man' },
-        '3': { name: 'Charlie', personality: 'arrogant and condescending', gender: 'man' },
-        '4': { name: 'David', personality: 'cold and indifferent', gender: 'man' },
-        '5': { name: 'Eve', personality: 'apathetic and disinterested', gender: 'woman' },
-        '6': { name: 'Frank', personality: 'sarcastic and mocking', gender: 'man' },
-        '7': { name: 'Grace', personality: 'rude and unsympathetic', gender: 'woman' },
-        '8': { name: 'Heidi', personality: 'impatient and unsympathetic', gender: 'woman' },
-        '9': { name: 'Ivy', personality: 'impolite and unprofessional', gender: 'woman' },
-        '10': { name: 'Jack', personality: 'unfriendly and introverted', gender: 'man' }
-    };
-
-    let agent;
-    for (let key in agents) {
-        if (agents[key].name === agentname) {
-            agent = agents[key];
-            break;
-        }
-    }
-    */
-
     // Select the Polly neural voice based on the customer's gender
     const voice = agent.gender === 'woman' ? 'Polly.Danielle-Neural' : 'Polly.Gregory-Neural';
 
@@ -43,17 +20,6 @@ exports.handler = async function(context, event, callback) {
 
       // Create a TwiML Voice Response object to build the response
       const twiml = new Twilio.twiml.VoiceResponse();
-/*
-   
-      // If no previous conversation is present, or if the conversation is empty, start the conversation
-    if (!event.request.cookies.convo) {
-        // Greet the user with a message using AWS Polly Neural voice
-        twiml.say({
-                voice: 'Polly.Joanna-Neural',
-            },
-	    "Hey! You've reached customer service. What can I help you with today?"
-        );
-    }*/
 
   // Initiate the Twilio Response object to handle updating the cookie with the chat history
   const response = new Twilio.Response();
@@ -83,7 +49,6 @@ exports.handler = async function(context, event, callback) {
 
   // Generate some <Say> TwiML using the cleaned up AI response
   twiml.say({
-          //voice: "Polly.Joanna-Neural",
           voice
       },
       aiResponse
@@ -125,7 +90,6 @@ exports.handler = async function(context, event, callback) {
         const systemMessages = [{
                 role: "system",
                 content: `You are a ${agent.personality} person named ${agent.name} who works at a hardware store. Please provide engaging but concise responses, less than 10 words.`
-                //content: `You are a ${agent.personality} AI assistant named ${agent.name}. Please provide engaging but concise responses, less than 10 words.`
             },
             {
                 role: "user",

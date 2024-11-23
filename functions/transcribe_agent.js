@@ -4,18 +4,6 @@ exports.handler = function(context, event, callback) {
 
     // Access the agent from the query parameters
     const agent = JSON.parse(decodeURIComponent(event.Agent));
-    //const agentname = agent.name;
-    //const agentname = event.Agent;
-
-    // If no previous conversation is present, or if the conversation is empty, start the conversation
-    /*if (!event.request.cookies.convo) {
-        // Greet the user with a message using AWS Polly Neural voice
-        twiml.say({
-                voice: 'Polly.Joanna-Neural',
-            },
-	    "Hey! I'm Joanna, a chatbot created using Twilio and ChatGPT. What would you like to talk about today?"
-        );
-    }*/
 
     // Stringify and encode the agent object
     const agentString = encodeURIComponent(JSON.stringify(agent)); //isnt this just event.Agent?

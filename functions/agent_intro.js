@@ -16,13 +16,6 @@ exports.handler = function(context, event, callback) {
         '10': { name: 'Jack', personality: 'unfriendly and introverted', gender: 'man' }
     };
 
-    /*
-    // Randomly select an agent name from a list of 10 names
-    const agentNames = ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Heidi', 'Ivy', 'Jack'];
-    const agent = agentNames[Math.floor(Math.random() * agentNames.length)];
-    console.log(`Selected Agent Persona: ${agentName}`);
-    */
-
     //const randomIndex = Math.floor(Math.random() * agents.length);
     const randomIndex = '1';
     const agent = agents[randomIndex];
@@ -57,8 +50,6 @@ exports.handler = function(context, event, callback) {
         input: 'speech', // Specify speech as the input type
         action: actionUrl, // Send the collected input to /respond 
         timeout: 30, //sets the timeout if no speech is received
-        /*action: actionUrl,
-        method: 'POST'*/
     });
 
     // If no input was received, redirect to the actionUrl
@@ -71,10 +62,6 @@ response.appendHeader('Content-Type', 'application/xml');
 
 // Set the response body to the generated TwiML
 response.setBody(twiml.toString());
-
-//append a query parameter to the URL to indicate the agent name
-//response.appendHeader('Location', `/respond_agent&Agent=${agent.name}`);
-//response.appendHeader('Location', actionUrl);
 
 // If no conversation cookie is present, set an empty conversation cookie
 if (!event.request.cookies.convo) {
