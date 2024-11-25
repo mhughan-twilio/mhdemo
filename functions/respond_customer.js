@@ -98,7 +98,7 @@ exports.handler = async function(context, event, callback) {
         // Define system messages to model the AI
         const systemMessages = [{
                 role: "system",
-                content: `You are ${customer.name}. You are ${customer.personality}. Introduce yourself and ask very concise questions, less than 10 words. You are a customer, not an assistant.`
+                content: `You are ${customer.name}. You are ${customer.personality}. Introduce yourself and ask very concise questions, less than 10 words. You are a customer, not an assistant. If the agent is rude, ask for a manager.`
             },
             {
                 role: "user",
